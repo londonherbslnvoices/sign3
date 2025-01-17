@@ -4,15 +4,7 @@ type: 'php:8.0'
 web:
   locations:
     '/':
-      root: 'public'  # Set the root to the public folder
-      index: 'index.php'  # Use index.php from the public folder
+      root: 'public'  # Make sure the root points to the 'public' directory
+      index: 'index.php'  # The entry point is index.php in the 'public' directory
       passthru: '/index.php'
       allow: all
-
-# Optional: If you have a database
-services:
-  database: 'mysql:10.3'
-
-# If you need to include any build steps
-build:
-  flavor: 'php'
