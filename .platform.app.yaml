@@ -1,26 +1,18 @@
-# This file defines the configuration for your Platform.sh application.
+name: sign3
+type: 'php:8.0'
 
-name: php-redirect-app
-
-type: "php:8.1"  # Adjust this if you're using a different PHP version
-
-# Define the relationship with any services (e.g., database, storage) if necessary.
-relationships: {}
-
-# The location of the document root
 web:
-    locations:
-        "/":
-            root: "index.php"  # Points to the index.php file in the root
-            allow: true
+  locations:
+    '/':
+      root: 'public'  # Set the root to the public folder
+      index: 'index.php'  # Use index.php from the public folder
+      passthru: '/index.php'
+      allow: all
 
-# If you need to define any additional build or deploy steps
+# Optional: If you have a database
+services:
+  database: 'mysql:10.3'
+
+# If you need to include any build steps
 build:
-    commands:
-        # No build steps are necessary for a simple PHP redirect app
-        - echo "No build steps required"
-
-deploy:
-    commands:
-        # No deploy steps are necessary for a simple PHP redirect app
-        - echo "Deployment completed"
+  flavor: 'php'
