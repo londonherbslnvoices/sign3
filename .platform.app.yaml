@@ -5,6 +5,7 @@ web:
   locations:
     '/':
       root: 'public'  # Make sure the root points to the 'public' directory
-      index: 'index.php'  # The entry point is index.php in the 'public' directory
+      index:
+        - 'index.php'  # Define index as an array with 'index.php'
       passthru: '/index.php'
       allow: all
