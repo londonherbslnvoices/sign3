@@ -1,0 +1,26 @@
+# This file defines the configuration for your Platform.sh application.
+
+name: php-redirect-app
+
+type: "php:8.1"  # Adjust this if you're using a different PHP version
+
+# Define the relationship with any services (e.g., database, storage) if necessary.
+relationships: {}
+
+# The location of the document root
+web:
+    locations:
+        "/":
+            root: "index.php"  # Points to the index.php file in the root
+            allow: true
+
+# If you need to define any additional build or deploy steps
+build:
+    commands:
+        # No build steps are necessary for a simple PHP redirect app
+        - echo "No build steps required"
+
+deploy:
+    commands:
+        # No deploy steps are necessary for a simple PHP redirect app
+        - echo "Deployment completed"
